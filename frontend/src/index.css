@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  /* Smooth transitions for color changes */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==================================================
+  COLOR PALETTE DEFINITIONS (CSS VARIABLES)
+==================================================
+*/
+
+/* 1. Green Palette (Default) */
+:root[data-palette='green'] {
+  --color-primary: 34 197 94; /* #22c55e */
+  --color-primary-dark: 22 101 52; /* #166534 */
+  --color-primary-light: 134 239 172; /* #86efac */
+  --color-secondary: 236 72 153; /* #ec4899 */
+  --color-secondary-dark: 157 23 77; /* #9d174d */
+  --color-secondary-light: 251 176 210; /* #fbb0d2 */
+  --color-neutral: 100 116 139; /* #64748b */
+}
+
+/* 2. Blue Palette */
+:root[data-palette='blue'] {
+  --color-primary: 59 130 246; /* #3b82f6 */
+  --color-primary-dark: 30 64 175; /* #1e40af */
+  --color-primary-light: 147 197 253; /* #93c5fd */
+  --color-secondary: 234 179 8; /* #eab308 */
+  --color-secondary-dark: 133 77 14; /* #854d0e */
+  --color-secondary-light: 253 230 138; /* #fde68a */
+  --color-neutral: 100 116 139; /* #64748b */
+}
+
+/* 3. Rose Palette */
+:root[data-palette='rose'] {
+  --color-primary: 244 63 94; /* #f43f5e */
+  --color-primary-dark: 159 18 57; /* #9f1239 */
+  --color-primary-light: 253 164 175; /* #fda4af */
+  --color-secondary: 168 85 247; /* #a855f7 */
+  --color-secondary-dark: 107 33 168; /* #6b21a8 */
+  --color-secondary-light: 209 196 233; /* #d1c4e9 */
+  --color-neutral: 100 116 139; /* #64748b */
+}
+
+
+/* 4. Corporate Teal */
+:root[data-palette='teal'] {
+  --color-primary: 20 184 166; /* #14b8a6 */
+  --color-primary-dark: 13 148 136; /* #0d9488 */
+  --color-primary-light: 153 246 228; /* #99f6e4 */
+  --color-secondary: 71 85 105; /* #475569 */
+  --color-secondary-dark: 30 41 59; /* #1e293b */
+  --color-secondary-light: 148 163 184; /* #94a3b8 */
+  --color-neutral: 100 116 139; /* #64748b */
+}
+
+/* 5. Warm Sandstone */
+:root[data-palette='sandstone'] {
+  --color-primary: 249 115 22; /* #f97316 */
+  --color-primary-dark: 194 65 12; /* #c2410c */
+  --color-primary-light: 253 186 116; /* #fdbb74 */
+  --color-secondary: 120 113 108; /* #78716c */
+  --color-secondary-dark: 68 64 60; /* #44403c */
+  --color-secondary-light: 168 162 158; /* #a8a29e */
+  --color-neutral: 100 116 139; /* #64748b */
+}
+
+/* 6. Lavender Gray */
+:root[data-palette='lavender'] {
+  --color-primary: 139 92 246; /* #8b5cf6 */
+  --color-primary-dark: 109 40 217; /* #6d28d9 */
+  --color-primary-light: 196 181 253; /* #c4b5fd */
+  --color-secondary: 107 114 128; /* #6b7280 */
+  --color-secondary-dark: 55 65 81; /* #374151 */
+  --color-secondary-light: 156 163 175; /* #9ca3af */
+  --color-neutral: 100 116 139; /* #64748b */
+}
+
+/* ==================================================
+  LIGHT & DARK MODE BASE
+==================================================
+*/
+
+/* Light Mode (Default) */
+:root {
+  --color-background: 255 255 255; /* #ffffff */
+  --color-background-soft: 249 250 251; /* #f9fafb */
+  --color-card: 255 255 255; /* #ffffff */
+  --color-text-primary: 17 24 39; /* #111827 */
+  --color-text-secondary: 55 65 81; /* #374151 */
+  --color-border: 229 231 235; /* #e5e7eb */
+}
+
+.dark:root {
+  --color-background: 17 24 39; /* #111827 */
+  --color-background-soft: 31 41 55; /* #1f2937 */
+  --color-card: 31 41 55; /* #1f2937 */
+  --color-text-primary: 243 244 246; /* #f3f4f6 */
+  --color-text-secondary: 156 163 175; /* #9ca3af */
+  --color-border: 55 65 81; /* #374151 */
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-dark text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+
+  .card {
+    @apply bg-card rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-6;
+  }
+}
